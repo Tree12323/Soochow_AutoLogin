@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
 from bs4 import BeautifulSoup
 import time
 import requests
@@ -13,7 +15,9 @@ class Login:
 
     def login(self):
         try:
-            browser = webdriver.Chrome(executable_path=self.browser_url)
+            chrome_options = Options()
+            chrome_options.add_argument("--headless")
+            browser = webdriver.Chrome(executable_path=self.browser_url, options=chrome_options)
 
             browser.get(self.url)
             browser.find_element_by_id('username').send_keys(self.username)
@@ -69,10 +73,10 @@ class Login:
 
 if __name__ == "__main__":
     # 学号
-    username = '*********'
+    username = '20184208068'
 
     # 密码
-    password = '***********'
+    password = 'syw205205'
 
     # 登陆网址
     url = 'http://a.suda.edu.cn/'
