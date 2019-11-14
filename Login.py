@@ -73,10 +73,10 @@ class Login:
 
 if __name__ == "__main__":
     # 学号
-    username = '20184208068'
+    username = '*********'
 
     # 密码
-    password = 'syw205205'
+    password = '**********'
 
     # 登陆网址
     url = 'http://a.suda.edu.cn/'
